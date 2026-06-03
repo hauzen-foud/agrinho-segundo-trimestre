@@ -1,321 +1,95 @@
 
-/* ==========================================
-   CONFIGURAÇÕES GERAIS
-========================================== */
-
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-}
-
-html{
-    scroll-behavior:smooth;
+    font-family:Arial, sans-serif;
 }
 
 body{
-    background:#f5f7f4;
+    background:#f4f4f4;
     color:#333;
-    line-height:1.8;
+    line-height:1.6;
 }
 
-/* ==========================================
-   CABEÇALHO
-========================================== */
-
+/* CABEÇALHO */
 header{
-    background:
-    linear-gradient(rgba(0,0,0,0.55),
-    rgba(0,0,0,0.55)),
-    url("imagens/fazenda.jpg");
-
-    background-size:cover;
-    background-position:center;
-
-    min-height:70vh;
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
-    text-align:center;
+    background:#2e7d32;
     color:white;
-
-    padding:40px;
+    text-align:center;
+    padding:35px 20px;
 }
 
-.header-content{
-    max-width:900px;
-}
-
-header h1{
-    font-size:3rem;
-    margin-bottom:20px;
-}
-
-header p{
-    font-size:1.3rem;
-}
-
-/* ==========================================
-   MENU
-========================================== */
-
+/* MENU */
 nav{
-    position:sticky;
-    top:0;
-    z-index:1000;
-
     background:#1b5e20;
-
-    display:flex;
-    justify-content:center;
-    flex-wrap:wrap;
-
-    padding:15px;
+    text-align:center;
+    padding:10px;
 }
 
 nav a{
     color:white;
     text-decoration:none;
-    margin:8px 15px;
-    font-weight:bold;
-    transition:0.3s;
+    margin:0 10px;
+    font-size:14px;
 }
 
-nav a:hover{
-    color:#a5d6a7;
-}
-
-/* ==========================================
-   SEÇÕES
-========================================== */
-
+/* SEÇÕES */
 section{
-    padding:70px 10%;
-}
-
-section:nth-child(even){
-    background:#ffffff;
+    background:white;
+    padding:35px 10%;
+    margin-bottom:10px;
 }
 
 h2{
-    text-align:center;
     color:#2e7d32;
-    margin-bottom:30px;
-    font-size:2rem;
-}
-
-section p{
-    text-align:justify;
     margin-bottom:15px;
 }
 
-/* ==========================================
-   LISTAS
-========================================== */
-
-#causas ul,
-#referencias ul{
-    max-width:900px;
-    margin:auto;
-    padding-left:30px;
+/* LISTA */
+ul{
+    padding-left:20px;
 }
 
-#causas li,
-#referencias li{
-    margin-bottom:12px;
-}
-
-/* ==========================================
-   CARDS
-========================================== */
-
+/* CARDS */
 .cards{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:25px;
-}
-
-.card{
-    background:white;
-    border-radius:15px;
-
-    padding:25px;
-
-    box-shadow:0 4px 12px rgba(0,0,0,0.15);
-
-    transition:0.3s;
-}
-
-.card:hover{
-    transform:translateY(-8px);
-
-    box-shadow:0 8px 20px rgba(0,0,0,0.20);
-}
-
-.card h3{
-    color:#1b5e20;
-    margin-bottom:15px;
-}
-
-/* ==========================================
-   GALERIA
-========================================== */
-
-.galeria{
-    display:grid;
-
-    grid-template-columns:
-    repeat(auto-fit,minmax(250px,1fr));
-
-    gap:20px;
-}
-
-.galeria img{
-    width:100%;
-    height:250px;
-
-    object-fit:cover;
-
-    border-radius:15px;
-
-    transition:0.4s;
-
-    box-shadow:0 4px 10px rgba(0,0,0,0.15);
-}
-
-.galeria img:hover{
-    transform:scale(1.05);
-}
-
-/* ==========================================
-   FORMULÁRIO
-========================================== */
-
-form{
-    max-width:700px;
-    margin:auto;
-
-    display:flex;
-    flex-direction:column;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
     gap:15px;
 }
 
-input,
-textarea{
+.card{
+    background:#f9f9f9;
     padding:15px;
+    border:1px solid #ddd;
+}
 
+/* FORMULÁRIO */
+form{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    max-width:500px;
+}
+
+input, textarea{
+    padding:10px;
     border:1px solid #ccc;
-    border-radius:10px;
-
-    font-size:1rem;
 }
 
-textarea{
-    min-height:150px;
-    resize:vertical;
-}
-
+/* BOTÃO */
 button{
     background:#2e7d32;
-
     color:white;
-
     border:none;
-
-    padding:15px;
-
-    border-radius:10px;
-
-    font-size:1rem;
-
-    cursor:pointer;
-
-    transition:0.3s;
+    padding:10px;
 }
 
-button:hover{
-    background:#1b5e20;
-}
-
-/* ==========================================
-   CONCLUSÃO
-========================================== */
-
-#conclusao{
-    background:#e8f5e9;
-}
-
-/* ==========================================
-   REFERÊNCIAS
-========================================== */
-
-#referencias{
-    background:#f1f8e9;
-}
-
-/* ==========================================
-   RODAPÉ
-========================================== */
-
+/* RODAPÉ */
 footer{
-    background:#1b5e20;
-
-    color:white;
-
     text-align:center;
-
-    padding:30px;
+    padding:15px;
+    background:#1b5e20;
+    color:white;
 }
-
-footer p{
-    margin:5px 0;
-}
-
-/* ==========================================
-   BARRA DE ROLAGEM
-========================================== */
-
-::-webkit-scrollbar{
-    width:10px;
-}
-
-::-webkit-scrollbar-track{
-    background:#e0e0e0;
-}
-
-::-webkit-scrollbar-thumb{
-    background:#2e7d32;
-    border-radius:10px;
-}
-
-/* ==========================================
-   RESPONSIVIDADE
-========================================== */
-
-@media(max-width:768px){
-
-    header h1{
-        font-size:2rem;
-    }
-
-    header p{
-        font-size:1rem;
-    }
-
-    nav{
-        flex-direction:column;
-        align-items:center;
-    }
-
-    section{
-        padding:50px 8%;
-    }
-
-    h2{
-        font-size:1.6rem;
-    }
-
 }
