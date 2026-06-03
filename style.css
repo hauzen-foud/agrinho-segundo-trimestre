@@ -1,90 +1,203 @@
 
+/* ==========================================
+   CONFIGURAÇÕES GERAIS
+========================================== */
+
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:Arial, sans-serif;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
 }
 
 body{
-    background:#f4f4f4;
-    line-height:1.6;
+    background:#f5f7f4;
+    color:#333;
+    line-height:1.8;
 }
+
+/* ==========================================
+   CABEÇALHO
+========================================== */
 
 header{
-    background:#2e7d32;
-    color:white;
+    background:
+    linear-gradient(rgba(0,0,0,0.55),
+    rgba(0,0,0,0.55)),
+    url("imagens/fazenda.jpg");
+
+    background-size:cover;
+    background-position:center;
+
+    min-height:70vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
     text-align:center;
-    padding:50px 20px;
+    color:white;
+
+    padding:40px;
 }
 
+.header-content{
+    max-width:900px;
+}
+
+header h1{
+    font-size:3rem;
+    margin-bottom:20px;
+}
+
+header p{
+    font-size:1.3rem;
+}
+
+/* ==========================================
+   MENU
+========================================== */
+
 nav{
+    position:sticky;
+    top:0;
+    z-index:1000;
+
     background:#1b5e20;
-    text-align:center;
+
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+
     padding:15px;
 }
 
 nav a{
     color:white;
     text-decoration:none;
-    margin:0 15px;
+    margin:8px 15px;
     font-weight:bold;
+    transition:0.3s;
 }
 
 nav a:hover{
-    color:#c8e6c9;
+    color:#a5d6a7;
 }
 
+/* ==========================================
+   SEÇÕES
+========================================== */
+
 section{
-    padding:40px 10%;
+    padding:70px 10%;
+}
+
+section:nth-child(even){
+    background:#ffffff;
 }
 
 h2{
+    text-align:center;
     color:#2e7d32;
-    margin-bottom:20px;
+    margin-bottom:30px;
+    font-size:2rem;
 }
+
+section p{
+    text-align:justify;
+    margin-bottom:15px;
+}
+
+/* ==========================================
+   LISTAS
+========================================== */
+
+#causas ul,
+#referencias ul{
+    max-width:900px;
+    margin:auto;
+    padding-left:30px;
+}
+
+#causas li,
+#referencias li{
+    margin-bottom:12px;
+}
+
+/* ==========================================
+   CARDS
+========================================== */
 
 .cards{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:20px;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
 }
 
 .card{
     background:white;
-    padding:20px;
-    border-radius:10px;
-    box-shadow:0 2px 8px rgba(0,0,0,0.2);
+    border-radius:15px;
+
+    padding:25px;
+
+    box-shadow:0 4px 12px rgba(0,0,0,0.15);
+
+    transition:0.3s;
 }
 
-#causas ul{
-    padding-left:25px;
+.card:hover{
+    transform:translateY(-8px);
+
+    box-shadow:0 8px 20px rgba(0,0,0,0.20);
 }
 
-#causas li{
-    margin-bottom:10px;
+.card h3{
+    color:#1b5e20;
+    margin-bottom:15px;
 }
+
+/* ==========================================
+   GALERIA
+========================================== */
 
 .galeria{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(250px,1fr));
+
     gap:20px;
 }
 
 .galeria img{
     width:100%;
     height:250px;
+
     object-fit:cover;
-    border-radius:10px;
-    box-shadow:0 2px 8px rgba(0,0,0,0.2);
-    transition:0.3s;
+
+    border-radius:15px;
+
+    transition:0.4s;
+
+    box-shadow:0 4px 10px rgba(0,0,0,0.15);
 }
 
 .galeria img:hover{
-    transform:scale(1.03);
+    transform:scale(1.05);
 }
 
+/* ==========================================
+   FORMULÁRIO
+========================================== */
+
 form{
+    max-width:700px;
+    margin:auto;
+
     display:flex;
     flex-direction:column;
     gap:15px;
@@ -92,27 +205,117 @@ form{
 
 input,
 textarea{
-    padding:12px;
+    padding:15px;
+
     border:1px solid #ccc;
-    border-radius:5px;
+    border-radius:10px;
+
+    font-size:1rem;
+}
+
+textarea{
+    min-height:150px;
+    resize:vertical;
 }
 
 button{
     background:#2e7d32;
+
     color:white;
+
     border:none;
-    padding:12px;
+
+    padding:15px;
+
+    border-radius:10px;
+
+    font-size:1rem;
+
     cursor:pointer;
+
+    transition:0.3s;
 }
 
 button:hover{
     background:#1b5e20;
 }
 
+/* ==========================================
+   CONCLUSÃO
+========================================== */
+
+#conclusao{
+    background:#e8f5e9;
+}
+
+/* ==========================================
+   REFERÊNCIAS
+========================================== */
+
+#referencias{
+    background:#f1f8e9;
+}
+
+/* ==========================================
+   RODAPÉ
+========================================== */
+
 footer{
-    background:#2e7d32;
+    background:#1b5e20;
+
     color:white;
+
     text-align:center;
-    padding:20px;
-    margin-top:30px;
+
+    padding:30px;
+}
+
+footer p{
+    margin:5px 0;
+}
+
+/* ==========================================
+   BARRA DE ROLAGEM
+========================================== */
+
+::-webkit-scrollbar{
+    width:10px;
+}
+
+::-webkit-scrollbar-track{
+    background:#e0e0e0;
+}
+
+::-webkit-scrollbar-thumb{
+    background:#2e7d32;
+    border-radius:10px;
+}
+
+/* ==========================================
+   RESPONSIVIDADE
+========================================== */
+
+@media(max-width:768px){
+
+    header h1{
+        font-size:2rem;
+    }
+
+    header p{
+        font-size:1rem;
+    }
+
+    nav{
+        flex-direction:column;
+        align-items:center;
+    }
+
+    section{
+        padding:50px 8%;
+    }
+
+    h2{
+        font-size:1.6rem;
+    }
+
 }
