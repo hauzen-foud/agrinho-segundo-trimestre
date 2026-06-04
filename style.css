@@ -1,63 +1,105 @@
+:root{
+    --bg:#f4f6f8;
+    --card:#ffffff;
+    --text:#222;
+    --primary:#2e7d32;
+    --secondary:#1b5e20;
+    --shadow:0 4px 12px rgba(0,0,0,.10);
+}
+
+body.dark{
+    --bg:#121212;
+    --card:#1e1e1e;
+    --text:#f5f5f5;
+    --primary:#388e3c;
+    --secondary:#0d3b12;
+    --shadow:0 4px 12px rgba(0,0,0,.50);
+}
+
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
 }
 
-body{
-    font-family:Arial, sans-serif;
-    background:#f4f6f8;
-    color:#333;
-    line-height:1.6;
+html{
+    scroll-behavior:smooth;
 }
 
+body{
+    font-family:'Segoe UI',sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    line-height:1.6;
+    transition:.3s;
+}
+
+/* HERO */
+
 .hero{
-    background:linear-gradient(135deg,#2e7d32,#66bb6a);
+    background:linear-gradient(135deg,var(--primary),#66bb6a);
     color:white;
-    padding:80px 20px;
+    padding:100px 20px;
     text-align:center;
 }
 
 .hero h1{
     margin-bottom:20px;
+    font-size:clamp(2rem,5vw,4rem);
 }
+
+/* BOTÃO */
 
 #btnTema{
     margin-top:20px;
-    padding:12px 20px;
+    padding:12px 25px;
     border:none;
     border-radius:8px;
     cursor:pointer;
+    font-weight:bold;
 }
 
+/* MENU */
+
 .menu{
-    background:#1b5e20;
+    background:var(--secondary);
+    position:sticky;
+    top:0;
+    z-index:100;
 }
 
 .menu ul{
     display:flex;
     justify-content:center;
-    list-style:none;
     flex-wrap:wrap;
+    list-style:none;
 }
 
 .menu a{
     color:white;
     text-decoration:none;
+    padding:15px 20px;
     display:block;
-    padding:15px;
 }
 
 .menu a:hover{
-    background:#388e3c;
+    background:rgba(255,255,255,.15);
 }
 
+/* CONTAINERS */
+
 .container{
-    width:90%;
     max-width:1200px;
     margin:auto;
-    padding:50px 0;
+    padding:60px 20px;
+    background:var(--bg);
 }
+
+.container h2{
+    margin-bottom:20px;
+}
+
+/* GRID */
 
 .grid-cards{
     display:grid;
@@ -65,18 +107,35 @@ body{
     gap:20px;
 }
 
+/* CARDS */
+
+.card,
+.faq details,
+.resultado,
+.acao{
+    background:var(--card);
+    color:var(--text);
+    border-radius:12px;
+    box-shadow:var(--shadow);
+    transition:.3s;
+}
+
 .card{
-    background:white;
     padding:25px;
-    border-radius:10px;
-    box-shadow:0 3px 10px rgba(0,0,0,.1);
+}
+
+.card:hover{
+    transform:translateY(-5px);
 }
 
 .faq details{
+    padding:20px;
     margin-bottom:15px;
-    background:white;
-    padding:15px;
-    border-radius:10px;
+}
+
+.faq summary{
+    cursor:pointer;
+    font-weight:bold;
 }
 
 .acoes{
@@ -86,33 +145,34 @@ body{
 }
 
 .acao{
-    background:#e8f5e9;
     padding:20px;
-    border-left:5px solid #2e7d32;
+    border-left:5px solid var(--primary);
 }
 
 .resultado{
-    margin-top:30px;
-    background:white;
     padding:25px;
-    border-radius:10px;
+    margin-top:30px;
 }
+
+/* FOOTER */
 
 footer{
+    background:var(--secondary);
+    color:white;
     text-align:center;
-    padding:30px;
-    background:#1b5e20;
-    color:white;
+    padding:40px 20px;
 }
 
-.dark{
-    background:#121212;
-    color:white;
-}
+/* RESPONSIVO */
 
-.dark .card,
-.dark .faq details,
-.dark .resultado{
-    background:#222;
-    color:white;
+@media(max-width:768px){
+
+    .hero{
+        padding:70px 20px;
+    }
+
+    .menu ul{
+        flex-direction:column;
+    }
+
 }
