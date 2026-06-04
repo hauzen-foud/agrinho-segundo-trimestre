@@ -1,365 +1,118 @@
-```css
-/* ==========================
-   RESET E CONFIGURAÇÕES GERAIS
-========================== */
-
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
 }
 
-html{
-    scroll-behavior:smooth;
-}
-
 body{
-    font-family:Arial, Helvetica, sans-serif;
-    background:#f4f7f4;
+    font-family:Arial, sans-serif;
+    background:#f4f6f8;
     color:#333;
-    line-height:1.8;
+    line-height:1.6;
 }
 
-/* ==========================
-   CABEÇALHO
-========================== */
-
-header{
-    background:linear-gradient(135deg,#1b5e20,#2e7d32,#43a047);
+.hero{
+    background:linear-gradient(135deg,#2e7d32,#66bb6a);
     color:white;
+    padding:80px 20px;
     text-align:center;
-    padding:80px 10%;
-    box-shadow:0 4px 15px rgba(0,0,0,0.2);
 }
 
-header h1{
-    font-size:3rem;
-    margin-bottom:25px;
-    text-shadow:2px 2px 8px rgba(0,0,0,0.2);
+.hero h1{
+    margin-bottom:20px;
 }
 
-header p{
-    max-width:1000px;
-    margin:auto;
-    font-size:1.15rem;
+#btnTema{
+    margin-top:20px;
+    padding:12px 20px;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
 }
 
-/* ==========================
-   MENU DE NAVEGAÇÃO
-========================== */
-
-nav{
-    background:#145a1a;
-    position:sticky;
-    top:0;
-    z-index:1000;
-    box-shadow:0 2px 10px rgba(0,0,0,0.15);
+.menu{
+    background:#1b5e20;
 }
 
-nav ul{
-    list-style:none;
+.menu ul{
     display:flex;
     justify-content:center;
+    list-style:none;
     flex-wrap:wrap;
 }
 
-nav li{
-    margin:0;
-}
-
-nav a{
-    display:block;
-    padding:18px 25px;
+.menu a{
     color:white;
     text-decoration:none;
-    font-weight:bold;
-    transition:0.3s;
+    display:block;
+    padding:15px;
 }
 
-nav a:hover{
-    background:#43a047;
+.menu a:hover{
+    background:#388e3c;
 }
 
-/* ==========================
-   CONTEÚDO PRINCIPAL
-========================== */
-
-main{
+.container{
     width:90%;
     max-width:1200px;
-    margin:40px auto;
+    margin:auto;
+    padding:50px 0;
 }
 
-/* ==========================
-   SEÇÕES
-========================== */
+.grid-cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
 
-section{
+.card{
     background:white;
-    margin-bottom:35px;
-    padding:40px;
-    border-radius:15px;
-    box-shadow:0 3px 12px rgba(0,0,0,0.08);
-    transition:0.3s;
-}
-
-section:hover{
-    transform:translateY(-3px);
-}
-
-section h2{
-    color:#2e7d32;
-    margin-bottom:25px;
-    font-size:2rem;
-    border-left:8px solid #2e7d32;
-    padding-left:15px;
-}
-
-section p{
-    margin-bottom:18px;
-    text-align:justify;
-}
-
-/* ==========================
-   SUBTÍTULOS
-========================== */
-
-article{
-    margin-top:30px;
-    margin-bottom:25px;
-}
-
-article h3{
-    color:#1b5e20;
-    margin-bottom:12px;
-    font-size:1.4rem;
-}
-
-/* ==========================
-   LISTA DE BENEFÍCIOS
-========================== */
-
-ul{
-    padding-left:30px;
-}
-
-ul li{
-    margin-bottom:12px;
-    font-size:1.05rem;
-}
-
-/* ==========================
-   ÁREA DE IMAGENS
-========================== */
-
-div h3{
-    margin-bottom:15px;
-}
-
-section div{
-    margin-top:30px;
-}
-
-section div:not(:has(button)){
-    margin-top:0;
-}
-
-button{
-    background:#2e7d32;
-    color:white;
-    border:none;
-    padding:14px 28px;
-    font-size:1rem;
-    border-radius:10px;
-    cursor:pointer;
-    transition:0.3s;
-}
-
-button:hover{
-    background:#1b5e20;
-    transform:scale(1.05);
-}
-
-/* ==========================
-   CAIXAS DE IMAGEM
-========================== */
-
-section div:has(button){
-    border:2px dashed #81c784;
-    background:#f8fff8;
-    border-radius:12px;
-    padding:35px;
-    text-align:center;
-}
-
-/* ==========================
-   CARTÕES DAS CAUSAS
-========================== */
-
-#causas article{
-    background:#f8fdf8;
-    border-left:5px solid #43a047;
-    padding:20px;
-    border-radius:10px;
-    margin-bottom:20px;
-}
-
-/* ==========================
-   CARTÕES DAS TECNOLOGIAS
-========================== */
-
-#tecnologias article{
-    background:#f9fcf9;
-    border-left:5px solid #2e7d32;
     padding:25px;
     border-radius:10px;
-    margin-bottom:20px;
+    box-shadow:0 3px 10px rgba(0,0,0,.1);
 }
 
-/* ==========================
-   BENEFÍCIOS
-========================== */
-
-#beneficios{
-    background:linear-gradient(
-        to right,
-        #ffffff,
-        #f4fff4
-    );
+.faq details{
+    margin-bottom:15px;
+    background:white;
+    padding:15px;
+    border-radius:10px;
 }
 
-/* ==========================
-   FUTURO
-========================== */
-
-#futuro{
-    background:linear-gradient(
-        to right,
-        #f7fff7,
-        #ffffff
-    );
+.acoes{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:15px;
 }
 
-/* ==========================
-   CONCLUSÃO
-========================== */
-
-#conclusao{
-    border-top:6px solid #2e7d32;
+.acao{
+    background:#e8f5e9;
+    padding:20px;
+    border-left:5px solid #2e7d32;
 }
 
-/* ==========================
-   RODAPÉ
-========================== */
+.resultado{
+    margin-top:30px;
+    background:white;
+    padding:25px;
+    border-radius:10px;
+}
 
 footer{
-    background:#145a1a;
-    color:white;
     text-align:center;
-    padding:40px 20px;
-    margin-top:40px;
+    padding:30px;
+    background:#1b5e20;
+    color:white;
 }
 
-footer h3{
-    margin-bottom:10px;
-    font-size:1.5rem;
+.dark{
+    background:#121212;
+    color:white;
 }
 
-/* ==========================
-   RESPONSIVIDADE
-========================== */
-
-@media (max-width: 992px){
-
-    header h1{
-        font-size:2.4rem;
-    }
-
-    section{
-        padding:30px;
-    }
-}
-
-@media (max-width: 768px){
-
-    nav ul{
-        flex-direction:column;
-    }
-
-    nav a{
-        padding:15px;
-    }
-
-    header{
-        padding:60px 8%;
-    }
-
-    header h1{
-        font-size:2rem;
-    }
-
-    section{
-        padding:25px;
-    }
-
-    section h2{
-        font-size:1.7rem;
-    }
-}
-
-@media (max-width: 480px){
-
-    header h1{
-        font-size:1.6rem;
-    }
-
-    header p{
-        font-size:1rem;
-    }
-
-    section{
-        padding:20px;
-    }
-
-    button{
-        width:100%;
-    }
-}
-
-/* ==========================
-   ANIMAÇÃO DE ENTRADA
-========================== */
-
-section{
-    animation:aparecer 0.8s ease;
-}
-
-@keyframes aparecer{
-
-    from{
-        opacity:0;
-        transform:translateY(20px);
-    }
-
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
-}
-/* Seu CSS atual */
-header{
-    ...
-}
-
-section{
-    ...
-}
-
-/* Adicione as melhorias abaixo */
-.cabecalho{
-    background:#2E7D32;
-}
-
-.rodape{
-    background:#145A1A;
+.dark .card,
+.dark .faq details,
+.dark .resultado{
+    background:#222;
+    color:white;
 }
